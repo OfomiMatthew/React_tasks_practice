@@ -12,18 +12,18 @@ const App = () => {
 
 
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((s)=>s+1);
    
   }
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s)=>s-1)
 
   }
 
   return (
     <div>
-    <button className="close" onClick={()=>{setOpen(!open)}}>{`${open?"✖️" :"🫵"}`}</button>
+    <button className="close" onClick={()=>{setOpen((s)=>!s)}}>{`${open?"✖️" :"🫵"}`}</button>
    { open && (<div className="steps">
       <div className="numbers">
         <div className={step >= 1 ? "active" : ""}>1</div>
